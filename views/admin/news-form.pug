@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  h1= title
+
+  if errors.errors !== undefined
+    each message in errors.errors
+      p=message
+
+  form(method='post')
+    p
+      label Tytul
+      input(type="text" name="title")
+    p
+      label Opis
+      textarea(name="body")
+    p
+      input(type="submit" value="Zapisz")
